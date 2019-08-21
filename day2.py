@@ -1,3 +1,3 @@
-print("hello")
-print("hello")
-# halo ini latiha
+print("1")
+print("1")
+print("1")
