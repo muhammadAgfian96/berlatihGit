@@ -65,7 +65,7 @@ def addDict():
 def searchDict():
     nom = 0
     search = input("# mau Nyari apa? *")
-    out = ''
+    out = '\n'
     out += '       ==== list key "'+ search+'" ====           \n'
     out += '-------------------------------------\n'
     out += 'no \tkey\t\tvalue\n'
@@ -75,18 +75,23 @@ def searchDict():
             print(keys)
             nom += 1
             out+= str(nom) + '\t'+ str(keys) +'\t\t'+str(kamus[keys]) + '\n'
-            out += '-------------------------------------\n'
     print(out)        
     print("search")
 
-def delDict(number):
-    print("del")
+def delDict():
+    showDict()
+    pilih = input("mau hapus no berapa? *")
+    pilih = check_ans(pilih,0,9999999)
+    keyNya=str([*kamus][pilih-1])
+    kamus.pop(keyNya)
+    print("\n*** DELETE DONE ***\n")
+    showDict()
 
 
 kamus = { "nama": "agus", "umur": 29, "gender" : "laki-laki"}
 # untuk akses daftar list
-# print([*kamus][1])
-# print([*kamus.values()][0])
+# print([*kamus][1]) # --> nge print key
+# print([*kamus.values()][0]) # --> nge print  
 # print(list(kamus.keys()))
 
 
