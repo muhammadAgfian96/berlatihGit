@@ -61,21 +61,24 @@ def addDict():
             kamus[kunci] = nilai
     print("\n*** DONE ADD ***")
     showDict()
+
 def searchDict():
     nom = 0
     search = input("# mau Nyari apa? *")
     out = ''
-    out += '    list key '+ search+'           \n'
+    out += '       ==== list key "'+ search+'" ====           \n'
     out += '-------------------------------------\n'
     out += 'no \tkey\t\tvalue\n'
     out += '-------------------------------------\n'
     for keys in [*kamus]:
         if(search.lower() in keys.lower()):
+            print(keys)
             nom += 1
-            out+= str(nom) + '\t'+(str([*kamus][i]))+'\t\t'+str([*kamus.values()][i]) + '\n'
+            out+= str(nom) + '\t'+ str(keys) +'\t\t'+str(kamus[keys]) + '\n'
             out += '-------------------------------------\n'
     print(out)        
     print("search")
+
 def delDict(number):
     print("del")
 
@@ -95,5 +98,5 @@ while(cek==True):
     nanya = check_ans(nanya,1,4)
     listMenu[nanya-1]()
     ulang = input("* Mau Keluar (y/n)? *")
-    if(ulang.upper()=='Y'):
+    if(ulang.upper() =='Y'):
         cek=False
